@@ -27,24 +27,14 @@ function getComputerChoice() {
 getComputerChoice(computerChoice);
 console.log(choice);
 
-    // (if 0) => console.log("Rock") :
-    // (if 1) => console.log("Paper") :
-    // (if 2) => console.log("Scissors");
-
-
-
 console.log(computerChoice);
-// Your game will be played against the computer. You will write a function that randomly returns “rock”, “paper” or “scissors”.
 
-// Create a new function named getComputerChoice.
-// Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”.
-// Hint: The Math.random method returns a random number that’s greater than or equal to 0 and less than 1. Think about how you can use this to conditionally return one of the multiple choices.
-// Note: Some learners might think that arrays are necessary for this problem, but they aren’t. If you’re unfamiliar with arrays, don’t worry - they’ll be covered later in the curriculum.
-// Test that your function returns what you expect using console.log or the browser developer tools before advancing to the next step.
-// Step 3: Write the logic to get the human choice
-// Your game will be played by a human player. You will write a function that takes the user choice and returns it.
-
-// Create a new function named getHumanChoice.
+function getHumanChoice() {
+    let humanChoice = prompt("Please type in Rock, Paper or Scissors");
+    if (humanChoice === "Rock")
+    console.log(humanChoice);
+    };
+getHumanChoice();
 // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
 // Hint: Use the prompt method to get the user’s input.
 // Test what your function returns by using console.log.
@@ -61,7 +51,7 @@ console.log(computerChoice);
 // Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other variations.
 // Write the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.
 // Increment the humanScore or computerScore variable based on the round winner.
-// Example code:
+// Example code:a
 
 // function playRound(humanChoice, computerChoice) {
 //   // your code here!
