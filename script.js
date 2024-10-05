@@ -12,10 +12,13 @@
 // You don’t have to write additional code in the HTML file. This game is played entirely via the console.
 
 // Step 2: Write the logic to get the computer choice
-let computerChoice = Math.floor(Math.random()*3);
+
+let humanScore = 0;
+let computerScore = 0;
 let choice;
 
 function getComputerChoice() {
+    let computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice === 0) {
         choice = "Rock";
     } else if (computerChoice === 1) {
@@ -23,18 +26,62 @@ function getComputerChoice() {
     } else {
         choice = "Scissors";
     }
+    console.log("Computer's choice is: " + choice);
 }
-getComputerChoice(computerChoice);
-console.log(choice);
 
-console.log(computerChoice);
-
+let humanChoice;
 function getHumanChoice() {
-    let humanChoice = prompt("Please type in Rock, Paper or Scissors");
-    if (humanChoice === "Rock")
-    console.log(humanChoice);
-    };
-getHumanChoice();
+    let answer = prompt("Please type in Rock, Paper or Scissors").toLowerCase();
+    if (answer === "rock") {
+        humanChoice = "Rock";
+    } else if (answer === "paper") {
+        humanChoice = "Paper";
+    } else if (answer === "scissors") {
+        humanChoice = "Scissors";
+    } else {
+        console.log("Wrong Input. Try again.");
+        return getHumanChoice(); // Retry if the input is wrong
+    }
+    console.log("Player's choice is: " + humanChoice);
+}
+
+function round() {
+    getComputerChoice(); // Get new computer choice each round
+    getHumanChoice();    // Get new human choice each round
+    
+    if (choice === humanChoice) {
+        console.log("Draw");
+    } else if (
+        (choice === "Rock" && humanChoice === "Scissors") ||
+        (choice === "Paper" && humanChoice === "Rock") ||
+        (choice === "Scissors" && humanChoice === "Paper")
+    ) {
+        computerScore++;
+        console.log("Computer Wins this round!");
+    } else {
+        humanScore++;
+        console.log("Human Wins this round!");
+    }
+
+    console.log(`Score - Human: ${humanScore}, Computer: ${computerScore}`);
+}
+
+function fullGame() {
+    while (humanScore < 5 && computerScore < 5) {
+        round();
+    }
+    
+    if (humanScore >= 5) {
+        console.log("Human wins the game with a score of " + humanScore);
+    } else if (computerScore >= 5) {
+        console.log("Computer wins the game with a score of " + computerScore);
+    }
+}
+
+document.getElementById('start-game').addEventListener('click', function() {
+    fullGame();
+});
+
 // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
 // Hint: Use the prompt method to get the user’s input.
 // Test what your function returns by using console.log.
