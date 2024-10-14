@@ -47,6 +47,8 @@ table {
 	border-spacing: 0;
 }
 
+/* End of CSS RESET */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -62,6 +64,7 @@ header li {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .starter {
@@ -83,4 +86,38 @@ a {
     justify-content: space-between;
     padding: 60px 170px;
     align-items: center;
+}
+
+.options li{
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* .rock img {
+    height: 50px;
+}
+
+.paper img {
+    height: 50px;
+}
+
+.scissors img {
+    height: 50px;
+}
+
+.spock img {
+    height: 50px;
+}
+
+.lizard img {
+    height: 50px;
+} */
+
+.options img {
+    height: 50px;
 }
