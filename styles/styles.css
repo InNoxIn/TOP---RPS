@@ -98,26 +98,12 @@ a {
     gap: 5px;
 }
 
-/* .rock img {
-    height: 50px;
-}
-
-.paper img {
-    height: 50px;
-}
-
-.scissors img {
-    height: 50px;
-}
-
-.spock img {
-    height: 50px;
-}
-
-.lizard img {
-    height: 50px;
-} */
-
 .options img {
-    height: 50px;
+    max-height: 4rem;
+}
+
+.player-type {
+    text-align: center;
+    padding: 20px;
+    font-weight: 900;
 }
